@@ -17,14 +17,10 @@ jobs:
           --cloud-spot=true
           --cloud-region=eu-west-2
           --cloud-type=t2.medium
-          --cloud-startup-script=$(
-          echo 'sudo apt update && sudo apt-get install --yes ec2-instance-connect' |
-          base64 --wrap 0
-          )
-          || true
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - run: >-
           cat "$TF_LOG_PATH"
+        if: always()
