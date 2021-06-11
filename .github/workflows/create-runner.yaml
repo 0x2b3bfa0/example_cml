@@ -10,13 +10,11 @@ jobs:
       - uses: iterative/setup-cml@v1
       - run: >-
           cml-runner
-          --reuse=true
-          --labels=cml-demo
-          --idle-timeout=1000
           --cloud=aws
           --cloud-spot=true
           --cloud-region=us-east-1
           --cloud-type=t2.nano
+          --idle-timeout=1000
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
