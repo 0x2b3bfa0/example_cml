@@ -13,12 +13,11 @@ jobs:
           --cloud=aws
           --cloud-spot=true
           --cloud-region=us-east-1
-          --cloud-type=t2.nano
+          --cloud-type=t2.micro
           --idle-timeout=1000
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - run: >-
-          cat "$TF_LOG_PATH"
+      - run: cat "$TF_LOG_PATH"
         if: always()
