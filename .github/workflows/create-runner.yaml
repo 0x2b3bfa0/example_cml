@@ -12,7 +12,7 @@ jobs:
           cml-runner
           --cloud=aws
           --cloud-spot=true
-          --cloud-region=us-east-1
+          --cloud-region=us-east-2
           --cloud-type=t2.micro
           --idle-timeout=1000
         env:
