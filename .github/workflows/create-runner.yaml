@@ -15,8 +15,8 @@ jobs:
           --idle-timeout=1000
           --cloud=aws
           --cloud-spot=true
-          --cloud-region=us-west-1
-          --cloud-type=t2.medium
+          --cloud-region=us-east-1
+          --cloud-type=t2.nano
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
