@@ -15,7 +15,7 @@ jobs:
           --idle-timeout=1000
           --cloud=aws
           --cloud-spot=true
-          --cloud-region=eu-west-1
+          --cloud-region=us-west-1
           --cloud-type=t2.medium
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
